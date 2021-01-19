@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+	<!-- 前台DAO -->
+	<bean id="UserDAO" class="com.isd.dao.mining.impl.UserDAOImpl">
+		<property name="sessionFactory">
+		<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="NetworkDAO" class="com.isd.dao.mining.impl.NetworkDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TUserDAO" class="com.isd.dao.mining.impl.TUserDAOImpl">
+		<property name="sessionFactory">
+		<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="MessageDAO" class="com.isd.dao.mining.impl.MessageDAOImpl">
+		<property name="sessionFactory">
+		<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="ProblemDAO" class="com.isd.dao.mining.impl.ProblemDAOImpl">
+		<property name="sessionFactory">
+		<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="DaystatDAO" class="com.isd.dao.mining.impl.DaystatDAOImpl">
+		<property name="sessionFactory">
+		<ref bean="sessionFactory" />
+		</property>
+	</bean>	
+	<bean id="GeostatDAO" class="com.isd.dao.mining.impl.GeostatDAOImpl">
+		<property name="sessionFactory">
+		<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="MoblocDAO" class="com.isd.dao.mining.impl.MoblocDAOImpl">
+		<property name="sessionFactory">
+		<ref bean="sessionFactory" />
+		</property>
+	</bean>	
+	<bean id="PartnerDAO" class="com.isd.dao.mining.impl.PartnerDAOImpl">
+		<property name="sessionFactory">
+		<ref bean="sessionFactory" />
+		</property>
+	</bean>	
+	<bean id="opinionDAO" class="com.isd.dao.mining.impl.OpinionDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>	
+		
+	<!-- Weibo -->
+	<bean id="WbDictDAO" class="com.isd.dao.weibo.impl.WbDictDAOImpl">
+		<property name="sessionFactory">
+		<ref bean="sessionFactory" />
+		</property>
+	</bean>	
+	<bean id="WbColumnDAO" class="com.isd.dao.weibo.impl.WbColumnDAOImpl">
+		<property name="sessionFactory">
+		<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="WbResultDAO" class="com.isd.dao.weibo.impl.WbResultDAOImpl">
+		<property name="sessionFactory">
+		<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="WbUserDAO" class="com.isd.dao.weibo.impl.WbUserDAOImpl">
+		<property name="sessionFactory">
+		<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="WbTagDAO" class="com.isd.dao.weibo.impl.WbTagDAOImpl">
+		<property name="sessionFactory">
+		<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="WbUsertagDAO" class="com.isd.dao.weibo.impl.WbUsertagDAOImpl">
+		<property name="sessionFactory">
+		<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<!-- 自媒体 -->
+	<bean id="ZmtContentDAO" class="com.isd.dao.mark.impl.ZmtContentDAOImpl">
+		<property name="sessionFactory">
+		<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="ZmtTagDAO" class="com.isd.dao.mark.impl.ZmtTagDAOImpl">
+		<property name="sessionFactory">
+		<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="ZmtContenttagDAO" class="com.isd.dao.mark.impl.ZmtContenttagDAOImpl">
+		<property name="sessionFactory">
+		<ref bean="sessionFactory" />
+		</property>
+	</bean>	
+	
+	<!-- 新闻搜索 -->
+	<bean id="XwSiteDAO" class="com.isd.dao.news.impl.XwSiteDAOImpl">
+		<property name="sessionFactory">
+		<ref bean="sessionFactory" />
+		</property>
+	</bean>	
+	<bean id="XwPatternDAO" class="com.isd.dao.news.impl.XwPatternDAOImpl">
+		<property name="sessionFactory">
+		<ref bean="sessionFactory" />
+		</property>
+	</bean>	
+	<bean id="XwColumnDAO" class="com.isd.dao.news.impl.XwColumnDAOImpl">
+		<property name="sessionFactory">
+		<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="XwBlacklistDAO" class="com.isd.dao.news.impl.XwBlacklistDAOImpl">
+		<property name="sessionFactory">
+		<ref bean="sessionFactory" />
+		</property>
+	</bean>	
+	<bean id="XwResultDAO" class="com.isd.dao.news.impl.XwResultDAOImpl">
+		<property name="sessionFactory">
+		<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<!-- 论坛 -->
+	<bean id="LtSiteDAO" class="com.isd.dao.bbs.impl.LtSiteDAOImpl">
+		<property name="sessionFactory">
+		<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="LtColumnDAO" class="com.isd.dao.bbs.impl.LtColumnDAOImpl">
+		<property name="sessionFactory">
+		<ref bean="sessionFactory" />
+		</property>
+	</bean>	
+	<bean id="LtResultDAO" class="com.isd.dao.bbs.impl.LtResultDAOImpl">
+		<property name="sessionFactory">
+		<ref bean="sessionFactory" />
+		</property>
+	</bean>				
+	<!-- Weixin -->
+	<bean id="WxColumnDAO" class="com.isd.dao.wechat.impl.WxColumnDAOImpl">
+		<property name="sessionFactory">
+		<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="WxResultDAO" class="com.isd.dao.wechat.impl.WxResultDAOImpl">
+		<property name="sessionFactory">
+		<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="WxWeixinDAO" class="com.isd.dao.wechat.impl.WxWeixinDAOImpl">
+		<property name="sessionFactory">
+		<ref bean="sessionFactory" />
+		</property>
+	</bean>
+			
+	<!-- 事件 -->
+	<bean id="SjColumnDAO" class="com.isd.dao.event.impl.SjColumnDAOImpl">
+		<property name="sessionFactory">
+		<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<!-- 负面 -->
+	<bean id="FmColumnDAO" class="com.isd.dao.negative.impl.FmColumnDAOImpl">
+		<property name="sessionFactory">
+		<ref bean="sessionFactory" />
+		</property>
+	</bean>
+		
+	<!-- 后台DAO -->
+	<bean id="ManageDAO" class="com.isd.dao.manage.impl.AdminUserDAOImpl">
+		<property name="sessionFactory">
+		<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="ManageTUserDAO" class="com.isd.dao.manage.impl.TUserDAOImpl">
+		<property name="sessionFactory">
+		<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="ManageMessageDAO" class="com.isd.dao.manage.impl.MessageDAOImpl">
+		<property name="sessionFactory">
+		<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="ManageProblemDAO" class="com.isd.dao.manage.impl.ProblemDAOImpl">
+		<property name="sessionFactory">
+		<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<!-- 公共 -->
+	<bean id="ProvinceDAO" class="com.isd.dao.common.impl.ProvinceDAOImpl">
+		<property name="sessionFactory">
+		<ref bean="sessionFactory" />
+		</property>
+	</bean>	
+	<bean id="CityDAO" class="com.isd.dao.common.impl.CityDAOImpl">
+		<property name="sessionFactory">
+		<ref bean="sessionFactory" />
+		</property>
+	</bean>	
+	<bean id="IndustryDAO" class="com.isd.dao.common.impl.IndustryDAOImpl">
+		<property name="sessionFactory">
+		<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="CategoryDAO" class="com.isd.dao.common.impl.CategoryDAOImpl">
+		<property name="sessionFactory">
+		<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="FavoriteDAO" class="com.isd.dao.recommend.impl.FavoriteDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="RecommendDAO" class="com.isd.dao.recommend.impl.RecommendDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<!--
+	<bean id="ExtraDAO" class="com.isd.dao.mining.impl.ExtraDAOImpl">
+		<property name="sessionFactory">
+		<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="StatDAO" class="com.isd.dao.mining.impl.StatDAOImpl">
+		<property name="sessionFactory">
+		<ref bean="sessionFactory" />
+		</property>
+	</bean>	
+	-->
+</beans>

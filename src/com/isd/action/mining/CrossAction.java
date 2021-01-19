@@ -1,0 +1,14 @@
+package com.isd.action.mining;
+
+import com.isd.action.GenericAction;
+
+
+public class CrossAction extends GenericAction{
+
+	private static final long serialVersionUID = -1L;
+	
+	public String finance(){		
+		return SUCCESS;
+	}
+
+}

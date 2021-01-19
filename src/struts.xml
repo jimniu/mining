@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<!-- 开发模式 更改action名字不用重启服务器-->
+	<constant name="struts.enable.SlashesInActionNames" value="true" />
+	<constant name="struts.mapper.alwaysSelectFullNamespace" value="false" />
+	<constant name="struts.ui.theme" value="simple" />
+	<constant name="struts.action.extension" value="shtml" />
+	<constant name="struts.configuration.xml.reload" value="true" />
+	<constant name="struts.url.includeParams" value="none" />
+	<constant name="struts.ognl.allowStaticMethodAccess" value="true" />
+	<constant name="struts.multipart.maxSize" value="15728640" />
+	<constant name="struts.locale" value="zh_CN"></constant>
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>  
+	<constant name="struts.ui.templateDir" value="template" />
+	<constant name="struts.ui.templateSuffix" value="ftl" />
+	<constant name="struts.multipart.saveDir" value="/tmp"/>
+	<include file="struts-default.xml" />
+	<package name="global" extends="json-default">
+		<interceptors>
+			<!--  只接受从本网站点击过来的拦截器 -->
+			<interceptor name="interlink" class="com.isd.interceptor.InternalLinkInterceptor" />
+			<!--  要求用户必须登录的拦截器 -->
+			<interceptor name="auth" class="com.isd.interceptor.AuthorityInterceptor" />
+			<interceptor name="lanjie" class="com.isd.interceptor.ManageInterceptor" />
+		</interceptors>		
+		<global-results>
+			<!-- 下面定义的结果对所有的Action都有效 -->
+			<result name="error">/WEB-INF/jsp/global/error.jsp</result>
+			<result name="message">/WEB-INF/jsp/global/message.jsp</result>
+			<result name="text">/WEB-INF/jsp/global/text.jsp</result>
+			<result name="redirect" type="redirect">${redirect}</result>
+			<result name="redirectaction" type="redirectAction">${redirectaction}</result>
+			<result name="home" type="redirect">/</result>
+			<result name="admin" type="redirectAction">site/manage_index</result>
+		</global-results>
+		<!-- 全局的STRUTS定义，能满足绝大部分的需求(登录后的页面通用，未登录需单独定义)-->
+		<action name="site/index" class="siteAction" method="index">
+			<result name="success">/WEB-INF/jsp/mining/site/index.jsp</result>
+		</action>
+		<action name="site/about" class="siteAction" method="index">
+			<result name="success">/WEB-INF/jsp/mining/site/about.jsp</result>
+		</action>
+		<action name="site/problem" class="siteAction" method="problem">
+			<result name="success">/WEB-INF/jsp/mining/site/problem.jsp</result>
+		</action>
+		<action name="site/joinus" class="siteAction" method="joinus">
+			<result name="success">/WEB-INF/jsp/mining/site/joinus.jsp</result>
+		</action>
+		<action name="site/compress" class="siteAction" method="compress">
+		</action>		
+		<action name="weibo/exec" class="weiboAction" method="exec">
+		</action>	
+		<action name="user/login" class="userAction" method="login">
+		</action>			
+		<action name="*/search" class="{1}Action" method="search">
+		</action>
+		<action name="*/fetch" class="{1}Action" method="fetch">
+		</action>
+		<action name="common/*" class="commonAction" method="{1}">
+		</action>
+		<action name="*/refresh" class="{1}Action" method="refresh">
+		</action>		
+		<action name="track/third" class="trackAction" method="third">
+		</action>
+		<action name="site/summarize" class="siteAction" method="summarize">
+		</action>
+		<action name="interface/*" class="interfaceAction" method="{1}">
+		</action>
+		<action name="tuser/add" class="tuserAction" method="add">
+		</action>
+		<action name="mobile/*" class="mobileAction" method="{1}">
+			<result name="success">/WEB-INF/jsp/mining/mobile/{1}.jsp</result>
+		</action>
+		<action name="wechat/detail" class="wechatAction" method="detail">
+			<result name="success">/WEB-INF/jsp/mining/wechat/detail.jsp</result>
+		</action>
+		<action name="*/manage_*" class="{1}Action" method="manage_{2}">
+			<result name="success">/WEB-INF/jsp/manage/{1}/{2}.jsp</result>
+			<interceptor-ref name="lanjie"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		<action name="*/*" class="{1}Action" method="{2}">
+			<result name="success">/WEB-INF/jsp/mining/{1}/{2}.jsp</result>
+			<interceptor-ref name="auth"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>				
+		</action>			
+
+		<action name="site/datacheck" class="siteAction" method="datacheck">
+		</action>
+
+		
+		<!-- 前台额外定义的STRUTS -->
+		<!-- userAction -->
+		<action name="user/index" class="userAction" method="index">
+			<result name="success">/WEB-INF/jsp/mining/user/index.jsp</result>
+		</action>	
+		<action name="user/add" class="userAction" method="add">
+			<result name="text">/WEB-INF/jsp/global/text.jsp</result>
+		</action>	
+		<action name="user/checkname"  class="userAction"  method="checkname">
+		</action>
+		<action name="user/getpwd" class="userAction" method="getpwd">	
+			<result name="success">/WEB-INF/jsp/mining/user/getpwd.jsp</result>
+		</action>			
+		<action name="user/getcode" class="userAction" method="getcode">	
+		</action>	
+		<action name="user/checkuser" class="userAction" method="checkuser">	
+		</action>	
+		<action name="user/resetpwd" class="userAction" method="resetpwd">	
+			<result name="success">/WEB-INF/jsp/mining/user/resetpwd.jsp</result>	
+		</action>
+		<action name="user/waiting" class="userAction" method="waiting">
+			<result name="success">/WEB-INF/jsp/mining/user/waiting.jsp</result>
+		</action>	
+		<action name="user/updatepwd" class="userAction" method="updatepwd">	
+		</action>	
+		<action name="user/ensure" class="userAction" method="ensure">
+			<result name="REDIRECT"  type="redirectAction" >site/index</result>	
+		</action>	
+		<action name="mark/listall" class="markAction" method="listall">
+			<result name="success">/WEB-INF/jsp/mining/mark/listall.jsp</result>
+		</action>
+		<action name="mark/result" class="markAction" method="result">
+			<result name="success">/WEB-INF/jsp/mining/mark/result.jsp</result>
+		</action>
+		
+		
+		<!-- 后台额外定义的STRUTS -->
+		<!-- 首页 -->
+		<action name="site/manage_index"  class="siteAction" method="manage_index">
+			<result name="success">/WEB-INF/jsp/manage/site/index.jsp</result>
+		</action>
+		<!-- adminUserAction -->
+		<action name="auser/manage_logout" class="manageAction" method="logout">
+			<result  type="redirectAction"  name="success">site/manage_index</result>
+		</action>
+		<action name="auser/manage_login" class="manageAction" method="login">
+		</action>		
+		<action name="auser/manage_index" class="manageAction" method="index">
+			<result name="success">/WEB-INF/jsp/manage/adminUser/index.jsp</result>
+			<result type="redirectAction" name="home">site/manage_index</result>
+				<interceptor-ref name="defaultStack"/>
+				<interceptor-ref name="lanjie"/>			
+		</action>		
+		<action name="auser/manage_add" class="manageAction" method="add">
+			<result name="success">/WEB-INF/jsp/manage/adminUser/add.jsp</result>	
+			<result type="redirectAction" name="home">site/manage_index</result>
+				<interceptor-ref name="defaultStack"/>
+				<interceptor-ref name="lanjie"/>			
+		</action>	
+		<action name="auser/manage_checkname"  class="manageAction"  method="checkUserName">
+		</action>
+		<action name="auser/manage_save" class="manageAction" method="save">
+			<result type="redirectAction" name="success">auser/manage_index</result>	
+			<result type="redirectAction" name="home">site/manage_index</result>
+				<interceptor-ref name="defaultStack"/>
+				<interceptor-ref name="lanjie"/>			
+		</action>		
+		<action name="auser/manage_delete"  class="manageAction"  method="delete">
+		</action>
+		<action name="auser/manage_userinfo" class="manageAction" method="getUserInfo">
+			<result name="success">/WEB-INF/jsp/manage/adminUser/update.jsp</result>	
+			<result type="redirectAction" name="home">site/manage_index</result>
+				<interceptor-ref name="defaultStack"/>
+				<interceptor-ref name="lanjie"/>			
+		</action>
+		<action name="auser/manage_update"  class="manageAction" method="updateAdminUser">
+			<result type="redirectAction" name="success">auser/manage_index</result>	
+			<result type="redirectAction" name="home">site/manage_index</result>
+				<interceptor-ref name="defaultStack"/>
+				<interceptor-ref name="lanjie"/>			
+		</action>	
+		
+		
+
+		<!-- messageAction -->
+		<action name="message/manage_index" class="manageMessageAction" method="index">
+			<result name="success">/WEB-INF/jsp/manage/message/index.jsp</result>
+			<result type="redirectAction" name="home">message/manage_index</result>
+				<interceptor-ref name="defaultStack"/>
+				<interceptor-ref name="lanjie"/>			
+		</action>	
+		<action name="message/manage_add" class="manageMessageAction" method="add">
+			<result name="success">/WEB-INF/jsp/manage/message/add.jsp</result>	
+			<result type="redirectAction" name="home">message/manage_index</result>
+				<interceptor-ref name="defaultStack"/>
+				<interceptor-ref name="lanjie"/>			
+		</action>
+		<action name="message/manage_save" class="manageMessageAction" method="save">
+			<result type="redirectAction" name="success">message/manage_index</result>	
+			<result type="redirectAction" name="home">message/manage_index</result>
+				<interceptor-ref name="defaultStack"/>
+				<interceptor-ref name="lanjie"/>			
+		</action>		
+		<action name="message/manage_delete"  class="manageMessageAction"  method="delete">
+		</action>
+		<action name="message/manage_info" class="manageMessageAction" method="getInfo">
+			<result name="success">/WEB-INF/jsp/manage/message/update.jsp</result>	
+			<result type="redirectAction" name="home">message/manage_index</result>
+				<interceptor-ref name="defaultStack"/>
+				<interceptor-ref name="lanjie"/>			
+		</action>
+		<action name="message/manage_update"  class="manageMessageAction" method="update">
+			<result type="redirectAction" name="success">message/manage_index</result>	
+			<result type="redirectAction" name="home">message/manage_index</result>
+				<interceptor-ref name="defaultStack"/>
+				<interceptor-ref name="lanjie"/>			
+		</action>	
+		
+		<!-- tuserAction -->
+		<action name="tuser/manage_index" class="manageTUserAction" method="index">
+			<result name="success">/WEB-INF/jsp/manage/tuser/index.jsp</result>
+			<result type="redirectAction" name="home">tuser/manage_index</result>
+				<interceptor-ref name="defaultStack"/>
+				<interceptor-ref name="lanjie"/>			
+		</action>	
+		<action name="tuser/manage_delete" class="manageTUserAction" method="delete">
+			<result type="redirectAction" name="home">tuser/manage_index</result>
+				<interceptor-ref name="defaultStack"/>
+				<interceptor-ref name="lanjie"/>			
+		</action>
+		
+		<!-- problemAction -->
+		<action name="problem/manage_index" class="manageProblemAction" method="index">
+			<result name="success">/WEB-INF/jsp/manage/problem/index.jsp</result>
+			<result type="redirectAction" name="home">problem/manage_index</result>
+				<interceptor-ref name="defaultStack"/>
+				<interceptor-ref name="lanjie"/>			
+		</action>	
+		<action name="problem/manage_add" class="manageProblemAction" method="add">
+			<result name="success">/WEB-INF/jsp/manage/problem/add.jsp</result>	
+			<result type="redirectAction" name="home">problem/manage_index</result>
+				<interceptor-ref name="defaultStack"/>
+				<interceptor-ref name="lanjie"/>			
+		</action>
+		<action name="problem/manage_save" class="manageProblemAction" method="save">
+			<result type="redirectAction" name="success">problem/manage_index</result>	
+			<result type="redirectAction" name="home">problem/manage_index</result>
+				<interceptor-ref name="defaultStack"/>
+				<interceptor-ref name="lanjie"/>			
+		</action>		
+		<action name="problem/manage_delete"  class="manageProblemAction"  method="delete">
+		</action>
+		<action name="problem/manage_info" class="manageProblemAction" method="getInfo">
+			<result name="success">/WEB-INF/jsp/manage/problem/update.jsp</result>	
+			<result type="redirectAction" name="home">problem/manage_index</result>
+				<interceptor-ref name="defaultStack"/>
+				<interceptor-ref name="lanjie"/>			
+		</action>
+		<action name="problem/manage_update"  class="manageProblemAction" method="update">
+			<result type="redirectAction" name="success">problem/manage_index</result>	
+			<result type="redirectAction" name="home">problem/manage_index</result>
+				<interceptor-ref name="defaultStack"/>
+				<interceptor-ref name="lanjie"/>			
+		</action>	
+		
+		<!-- Partner -->
+		<action name="partner/manage_index"  class="managePartnerAction" method="index">
+			<result name="success">/WEB-INF/jsp/manage/partner/index.jsp</result>	
+			<interceptor-ref name="defaultStack"/>
+			<interceptor-ref name="lanjie"/>			
+		</action>	
+		<action name="partner/manage_add"  class="managePartnerAction" method="add">
+			<result name="success">/WEB-INF/jsp/manage/partner/add.jsp</result>	
+			<interceptor-ref name="defaultStack"/>
+			<interceptor-ref name="lanjie"/>			
+		</action>
+		<action name="partner/manage_save"  class="managePartnerAction" method="save">
+			<interceptor-ref name="defaultStack"/>
+			<interceptor-ref name="lanjie"/>			
+		</action>	
+		<action name="partner/manage_edit"  class="managePartnerAction" method="edit">
+			<result name="success">/WEB-INF/jsp/manage/partner/edit.jsp</result>	
+			<interceptor-ref name="defaultStack"/>
+			<interceptor-ref name="lanjie"/>			
+		</action>
+		<action name="partner/manage_update"  class="managePartnerAction" method="update">
+			<interceptor-ref name="defaultStack"/>
+			<interceptor-ref name="lanjie"/>			
+		</action>
+
+
+	</package>	
+</struts>    

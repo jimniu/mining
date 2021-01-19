@@ -1,0 +1,1 @@
+<%@page contentType="text/html; charset=utf-8"%><%@taglib prefix="s" uri="/struts-tags"%><div style="font-size:35px;"><s:property value="#message"/></div>

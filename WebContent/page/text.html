@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>事件管理-事件预警</title>
+    <style type="text/css">
+*{margin:0;padding:0;border:0;font-size:12px; font-family:"Microsoft YaHei";}
+img{ border:none; display:block;}
+a{ text-decoration:none;}
+ul li{ list-style:none;}
+.clear{ margin:0px; padding:0px; line-height:0px; clear:both;}
+body{ background: #000;}
+
+.box{ position:relative; z-index:0;}
+.nav_box{ position:absolute; left:0%; top:0; z-index:5; background:#000; width:30% }
+.nav{ width:100%;}
+.nav_user{ margin:20px 1%;}
+.nav_user span{ font-size:1.25em; color:#fff;}
+.nav_user span.user_news{ width:2%; float:left; display:block; float:left; margin-right:10px;}
+.nav_user span.user_news img{ width:100%;}	
+.nav dl dt{ line-height:20px; color: #fff; font-size: 1.125em; padding-left: 40px; margin-bottom: 15px;}
+.nav dl{ border-top: 1px solid #fff; padding: 20px 0px;}
+.nav dl dd{ margin: 5px 0px;}
+.nav dl dd a{ color: #fff; font-size: 1em; text-indent: 40px; display: block; width: 151px; height: 40px; line-height: 40px;}
+.nav dl dd a:hover{ color: #ff4200; font-size: 1em; text-indent: 40px; height: 40px;}
+.nav dl dd a.nav_vtd{ color: #ff4200; font-size: 1em; text-indent: 40px; height: 40px;}
+.nav dl.sjzl dt{background: url(images/left_bt0.png) no-repeat left top; height: 20px; overflow: hidden; }
+.nav dl.wbwj dt{background: url(images/left_bt2.png) no-repeat left top; height: 20px; overflow: hidden; }
+.nav dl.hywj dt{background: url(images/left_bt3.png) no-repeat left top; height: 20px; overflow: hidden;}
+.nav dl.wxwj dt{background: url(images/left_bt4.png) no-repeat left top; height: 20px; overflow: hidden;}
+.nav dl.sjzq dt{background: url(images/left_bt5.png) no-repeat left top; height: 20px; overflow: hidden;}
+.nav dl.ds dt{background: url(images/left_bt6.png) no-repeat left top; height: 20px; overflow: hidden;}
+.nav dl.lt dt{background: url(images/left_bt7.png) no-repeat left top; height: 20px; overflow: hidden;}
+.nav dl.sjgl dt{background: url(images/left_bt8.png) no-repeat left top; height: 20px; overflow: hidden;}
+.nav dl.fmgl dt{background: url(images/left_bt9.png) no-repeat left top; height: 20px; overflow: hidden;}
+.box{ position:relative; z-index:0;}
+.nav_box{ position:absolute; left:0%; top:0; z-index:5; background:#000; width:30% }
+.nav{ width:100%;}
+.nav_user{ margin:20px 1%;}
+.nav_user span{ font-size:1.25em; color:#fff;}
+.nav_user span.user_news{ width:2%; float:left; display:block; float:left; margin-right:10px;}
+.nav_user span.user_news img{ width:100%;}	
+.nav dl dt{ line-height:20px; color: #fff; font-size: 1.125em; padding-left: 40px; margin-bottom: 15px;}
+.nav dl{ border-top: 1px solid #fff; padding: 20px 0px;}
+.nav dl dd{ margin: 5px 0px;}
+.nav dl dd a{ color: #fff; font-size: 1em; text-indent: 40px; display: block; width: 151px; height: 40px; line-height: 40px;}
+.nav dl dd a:hover{ color: #ff4200; font-size: 1em; text-indent: 40px; height: 40px;}
+.nav dl dd a.nav_vtd{ color: #ff4200; font-size: 1em; text-indent: 40px; height: 40px;}
+.nav dl.sjzl dt{background: url(images/left_bt0.png) no-repeat left top; height: 20px; overflow: hidden; }
+.nav dl.wbwj dt{background: url(images/left_bt2.png) no-repeat left top; height: 20px; overflow: hidden; }
+.nav dl.hywj dt{background: url(images/left_bt3.png) no-repeat left top; height: 20px; overflow: hidden;}
+.nav dl.wxwj dt{background: url(images/left_bt4.png) no-repeat left top; height: 20px; overflow: hidden;}
+.nav dl.sjzq dt{background: url(images/left_bt5.png) no-repeat left top; height: 20px; overflow: hidden;}
+.nav dl.ds dt{background: url(images/left_bt6.png) no-repeat left top; height: 20px; overflow: hidden;}
+.nav dl.lt dt{background: url(images/left_bt7.png) no-repeat left top; height: 20px; overflow: hidden;}
+.nav dl.sjgl dt{background: url(images/left_bt8.png) no-repeat left top; height: 20px; overflow: hidden;}
+.nav dl.fmgl dt{background: url(images/left_bt9.png) no-repeat left top; height: 20px; overflow: hidden;}
+	
+	
+    </style>
+</head>
+<body>
+<div class="box">
+<div class="nav_box">
+    <div class="nav_user">
+        <span class="user_news"></span>
+        <span>您好，tiana</span>
+    </div>
+    <div class="nav">
+        <dl class="sjzl">
+            <dt>数据总览</dt>
+            <dd><a href="mrzl.html" class="nav_vtd">每日总揽</a></dd>
+        </dl>
+        <dl class="wbwj">
+            <dt>微博挖掘</dt>
+            <dd><a href="wbwj_rwgl.html">任务管理</a></dd>
+            <dd><a href="wbwj_yhgl.html">用户管理</a></dd>
+            <dd><a href="wbwj_sjfx.html">数据分析</a></dd>
+        </dl>
+        <dl class="hywj">
+            <dt>行业挖掘</dt>
+            <dd><a href="hywj_mrdt.html">每日动态</a></dd>
+            <dd><a href="hywj_gjc.html">关键词</a></dd>
+            <dd><a href="hywj_sjfx.html">数据分析</a></dd>
+        </dl>
+        <dl class="wxwj">
+            <dt>微信挖掘</dt>
+            <dd><a href="wxwj_mrdt.html">每日动态</a></dd>
+            <dd><a href="wxwj_gjc.html">关键词</a></dd>
+            <dd><a href="wxwj_sjfx.html">数据分析</a></dd>
+        </dl>
+        <dl class="sjzq">
+            <dt>数据抓取</dt>
+            <dd><a href="sjzq_sjgl.html">数据管理</a></dd>
+            <dd><a href="sjzq_bqgl.html">标签管理</a></dd>
+            <dd><a href="sjzq_sjfx.html">数据分析</a></dd>
+        </dl>
+        <dl class="ds">
+            <dt>电商</dt>
+            <dd><a href="ds_gjc.html">挖掘关键词</a></dd>
+            <dd><a href="ds_sjwj.html">数据挖掘</a></dd>
+        </dl>
+        <dl class="lt">
+            <dt>论坛</dt>
+            <dd><a href="lt_gjc.html">挖掘关键词</a></dd>
+            <dd><a href="lt_sjwj.html">数据挖掘</a></dd>
+        </dl>
+        <dl class="sjgl">
+            <dt>事件管理</dt>
+            <dd><a href="sjgl_sjyj.html">事件预警</a></dd>
+            <dd><a href="sjgl_sjcl.html">事件归档</a></dd>
+        </dl>
+        <dl class="fmgl">
+            <dt>负面管理</dt>
+            <dd><a href="fmgl_gjc.html">关键词</a></dd>
+            <dd><a href="fmgl——fmfx.html">负面分析</a></dd>
+            <dd><a href="fmgl_bqgl.html">标签管理</a></dd>
+        </dl>
+    </div>
+</div>    
+</div>
+</body>
+</html>

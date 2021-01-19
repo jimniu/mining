@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+
+	<!-- 前台Action -->
+	<bean id="siteAction" class="com.isd.action.mining.SiteAction"  scope="prototype">
+	</bean>	
+	<bean id="userAction" class="com.isd.action.mining.UserAction"  scope="prototype">
+	</bean>
+	<bean id="networkAction" class="com.isd.action.mining.NetworkAction"  scope="prototype">
+	</bean>
+	<bean id="tuserAction" class="com.isd.action.mining.TUserAction"  scope="prototype">
+	</bean>
+	<bean id="weiboAction" class="com.isd.action.mining.WeiboAction"  scope="prototype">
+	</bean>	
+	<bean id="markAction" class="com.isd.action.mining.MarkAction"  scope="prototype">
+	</bean>
+	<bean id="trackAction" class="com.isd.action.mining.TrackAction"  scope="prototype">
+	</bean>
+	<bean id="wechatAction" class="com.isd.action.mining.WechatAction"  scope="prototype">
+	</bean>	
+	<bean id="bbsAction" class="com.isd.action.mining.BbsAction"  scope="prototype">
+	</bean>		
+	<bean id="interfaceAction" class="com.isd.action.api.InterfaceAction"  scope="prototype">
+	</bean>		
+	<bean id="eventAction" class="com.isd.action.mining.EventAction"  scope="prototype">
+	</bean>	
+	<bean id="negativeAction" class="com.isd.action.mining.NegativeAction"  scope="prototype">
+	</bean>	
+	<bean id="commonAction" class="com.isd.action.mining.CommonAction"  scope="prototype">
+	</bean>
+	<bean id="storeAction" class="com.isd.action.mining.StoreAction"  scope="prototype">
+	</bean>
+	<bean id="vbizAction" class="com.isd.action.mining.VBizAction"  scope="prototype">
+	</bean>
+	<bean id="mediaAction" class="com.isd.action.mining.MediaAction"  scope="prototype">
+	</bean>
+	<bean id="leaderAction" class="com.isd.action.mining.LeaderAction"  scope="prototype">
+	</bean>
+	<bean id="emailAction" class="com.isd.action.mining.EmailAction"  scope="prototype">
+	</bean>
+	<bean id="messageAction" class="com.isd.action.mining.MessageAction"  scope="prototype">
+	</bean>
+	<bean id="crossAction" class="com.isd.action.mining.CrossAction"  scope="prototype">
+	</bean>
+	<bean id="reportAction" class="com.isd.action.mining.ReportAction"  scope="prototype">
+	</bean>	
+	<bean id="mobileAction" class="com.isd.action.mining.MobileAction"  scope="prototype">
+	</bean>
+	<bean id="recommendAction" class="com.isd.action.mining.RecommendAction"  scope="prototype">
+	</bean>
+	<bean id="publicAction" class="com.isd.action.mining.PublicAction"  scope="prototype">
+	</bean>
+	<bean id="opinionAction" class="com.isd.action.mining.OpinionAction"  scope="prototype">
+	</bean>
+
+
+	<!-- 后台Action -->
+	<bean id="manageAction"  class="com.isd.action.manage.AdminUserAction"  scope="prototype">
+	</bean>
+	<bean id="manageTUserAction"  class="com.isd.action.manage.TUserAction"  scope="prototype">
+	</bean>
+	<bean id="manageMessageAction"  class="com.isd.action.manage.MessageAction"  scope="prototype">
+	</bean>
+	<bean id="manageProblemAction"  class="com.isd.action.manage.ProblemAction"  scope="prototype">
+	</bean>
+	<bean id="managePartnerAction"  class="com.isd.action.manage.PartnerAction"  scope="prototype">
+	</bean>	
+	<!--  
+	<bean id="tagAction" class="com.isd.action.mining.TagAction"  scope="prototype">
+	</bean>
+	<bean id="usertagAction" class="com.isd.action.mining.UsertagAction"  scope="prototype">
+	</bean>
+	<bean id="extraAction" class="com.isd.action.mining.ExtraAction"  scope="prototype">
+	</bean>
+
+	-->
+</beans>

@@ -1,0 +1,12 @@
+/*删除微博用户*/
+DELIMITER $$
+DROP TRIGGER IF EXISTS wbmiddle_delete$$
+CREATE TRIGGER wbmiddle_delete
+AFTER DELETE ON robot.wb_middle
+FOR EACH ROW
+BEGIN
+	SET @mid		= OLD.mid;
+	SET @columnid	= OLD.columnid;
+	DELETE FROM mining.wb_result where columnid=@columnid and mid=@mid;	
+END$$
+DELIMITER ;

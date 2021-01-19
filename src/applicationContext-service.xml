@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+		xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+	<!--前台Service -->
+	<bean id="UserService" class="com.isd.service.mining.impl.UserServiceImpl">
+	</bean>
+	<bean id="NetworkService" class="com.isd.service.mining.impl.NetworkServiceImpl">
+	</bean>
+	<bean id="TUserService" class="com.isd.service.mining.impl.TUserServiceImpl">
+	</bean>
+	<bean id="MessageService" class="com.isd.service.mining.impl.MessageServiceImpl">
+	</bean>
+	<bean id="ProblemService" class="com.isd.service.mining.impl.ProblemServiceImpl">
+	</bean>
+	<bean id="SiteService" class="com.isd.service.mining.impl.SiteServiceImpl">
+	</bean>	
+	<bean id="MoblocService" class="com.isd.service.mining.impl.MoblocServiceImpl">
+	</bean>	
+	<bean id="DaystatService" class="com.isd.service.mining.impl.DaystatServiceImpl">
+	</bean>	
+	<bean id="GeostatService" class="com.isd.service.mining.impl.GeostatServiceImpl">
+	</bean>	
+	<bean id="PartnerService" class="com.isd.service.mining.impl.PartnerServiceImpl">
+	</bean>
+	<bean id="OpinionService" class="com.isd.service.mining.impl.OpinionServiceImpl">
+	</bean>	
+	<bean id="RecommendService" class="com.isd.service.recommend.impl.RecommendServiceImpl">
+	</bean>
+	<bean id="FavoriteService" class="com.isd.service.recommend.impl.FavoriteServiceImpl">
+	</bean>
+	
+	<bean id="WbDictService" class="com.isd.service.weibo.impl.WbDictServiceImpl">
+	</bean>			
+	<bean id="WbColumnService" class="com.isd.service.weibo.impl.WbColumnServiceImpl">
+	</bean>	
+	<bean id="WbResultService" class="com.isd.service.weibo.impl.WbResultServiceImpl">
+	</bean>		
+	<bean id="WbUserService" class="com.isd.service.weibo.impl.WbUserServiceImpl">
+	</bean>	
+	<bean id="WbTagService" class="com.isd.service.weibo.impl.WbTagServiceImpl">
+	</bean>	
+	<bean id="WbUsertagService" class="com.isd.service.weibo.impl.WbUsertagServiceImpl">
+	</bean>	
+	
+	<!-- 自媒体 -->
+	<bean id="ZmtContentService" class="com.isd.service.mark.impl.ZmtContentServiceImpl">
+	</bean>	
+	<bean id="ZmtTagService" class="com.isd.service.mark.impl.ZmtTagServiceImpl">
+	</bean>	
+	<bean id="ZmtContenttagService" class="com.isd.service.mark.impl.ZmtContenttagServiceImpl">
+	</bean>	
+		
+	<!-- news -->
+	<bean id="XwSiteService" class="com.isd.service.news.impl.XwSiteServiceImpl">
+	</bean>		
+	<bean id="XwPatternService" class="com.isd.service.news.impl.XwPatternServiceImpl">
+	</bean>		
+	<bean id="XwColumnService" class="com.isd.service.news.impl.XwColumnServiceImpl">
+	</bean>	
+	<bean id="XwBlacklistService" class="com.isd.service.news.impl.XwBlacklistServiceImpl">
+	</bean>		
+	<bean id="XwResultService" class="com.isd.service.news.impl.XwResultServiceImpl">
+	</bean>					
+	
+	<!-- Weixin -->
+	<bean id="WxColumnService" class="com.isd.service.wechat.impl.WxColumnServiceImpl">
+	</bean>
+	<bean id="WxResultService" class="com.isd.service.wechat.impl.WxResultServiceImpl">
+	</bean>
+	<bean id="WxWeixinService" class="com.isd.service.wechat.impl.WxWeixinServiceImpl">
+	</bean>	
+	
+	<!-- 论坛 -->
+	<bean id="LtSiteService" class="com.isd.service.bbs.impl.LtSiteServiceImpl">
+	</bean>		
+	<bean id="LtColumnService" class="com.isd.service.bbs.impl.LtColumnServiceImpl">
+	</bean>	
+	<bean id="LtResultService" class="com.isd.service.bbs.impl.LtResultServiceImpl">
+	</bean>		
+	
+	<!-- 事件 -->
+	<bean id="SjColumnService" class="com.isd.service.event.impl.SjColumnServiceImpl">
+	</bean>		
+
+	<!-- 负面 -->
+	<bean id="FmColumnService" class="com.isd.service.negative.impl.FmColumnServiceImpl">
+	</bean>		
+	
+	<!-- 后台Service -->
+	<bean id="MangeService" class="com.isd.service.manage.impl.AdminUserServiceImpl">
+	</bean>	
+	<bean id="MangeTUserService" class="com.isd.service.manage.impl.TUserServiceImpl">
+	</bean>
+	<bean id="MangeMessageService" class="com.isd.service.manage.impl.MessageServiceImpl">
+	</bean>
+	<bean id="MangeProblemService" class="com.isd.service.manage.impl.ProblemServiceImpl">
+	</bean>
+	
+	<!-- 公共 -->
+	<bean id="ProvinceService" class="com.isd.service.common.impl.ProvinceServiceImpl">
+	</bean>	
+	<bean id="CityService" class="com.isd.service.common.impl.CityServiceImpl">
+	</bean>	
+	<bean id="IndustryService" class="com.isd.service.common.impl.IndustryServiceImpl">
+	</bean>	
+	<bean id="CategoryService" class="com.isd.service.common.impl.CategoryServiceImpl">
+	</bean>	
+			
+	<!--  
+	<bean id="UsertagService" class="com.isd.service.mining.impl.UsertagServiceImpl">
+	</bean>	
+	<bean id="ExtraService" class="com.isd.service.mining.impl.ExtraServiceImpl">
+	</bean>	
+
+	<bean id="StatService" class="com.isd.service.mining.impl.StatServiceImpl">
+	</bean>
+	-->		
+</beans>

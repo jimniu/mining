@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hibernate-reverse-engineering>
+	<table name="bdp_summary" catalog="mining"
+		class="com.isd.entity.mining.Summary">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+		<column name="utime" type="java.util.Date"></column>
+	</table>
+	<table name="bdp_user" catalog="mining"
+		class="com.isd.entity.mining.User">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+		<column name="ctime" type="java.util.Date"></column>
+		<column name="utime" type="java.util.Date"></column>
+		<column name="etime" type="java.util.Date"></column>
+		<column name="expire" type="java.util.Date"></column>
+	</table>
+	<table name="wb_column" catalog="mining"
+		class="com.isd.entity.weibo.WbColumn">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+		<column name="ctime" type="java.util.Date"></column>
+		<column name="utime" type="java.util.Date"></column>
+		<column name="stime" type="java.util.Date"></column>
+		<column name="ftime" type="java.util.Date"></column>
+	</table>
+	<table name="wb_result" catalog="mining"
+		class="com.isd.entity.weibo.WbResult">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+		<column name="ctime" type="java.util.Date"></column>
+		<column name="utime" type="java.util.Date"></column>
+		<column name="ftime" type="java.util.Date"></column>
+		<column name="ptime" type="java.util.Date"></column>
+	</table>
+	<table name="wb_filter" catalog="mining"
+		class="com.isd.entity.weibo.WbFilter">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+		<column name="ctime" type="java.util.Date"></column>
+		<column name="utime" type="java.util.Date"></column>
+	</table>
+	<table name="wb_feed" catalog="robot"
+		class="com.isd.entity.weibo.WbFeed">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+		<column name="ctime" type="java.util.Date"></column>
+		<column name="utime" type="java.util.Date"></column>
+	</table>
+	<table name="wb_user" catalog="robot"
+		class="com.isd.entity.weibo.WbUser">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+		<column name="ctime" type="java.util.Date"></column>
+		<column name="utime" type="java.util.Date"></column>
+		<column name="ftime" type="java.util.Date"></column>
+		<column name="rtime" type="java.util.Date"></column>
+	</table>
+	<table name="wb_tag" catalog="robot"
+		class="com.isd.entity.weibo.WbTag">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+		<column name="ctime" type="java.util.Date"></column>
+	</table>
+	<table name="wb_usertag" catalog="robot"
+		class="com.isd.entity.weibo.WbUsertag">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+		<column name="ctime" type="java.util.Date"></column>
+	</table>
+	<table name="wb_customer" catalog="mining"
+		class="com.isd.entity.weibo.WbCustomer">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+		<column name="ctime" type="java.util.Date"></column>
+	</table>
+	<table name="ty_bbs" catalog="robot"
+		class="com.isd.entity.tianya.TyBbs">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+		<column name="utime" type="java.util.Date"></column>
+	</table>
+	<table name="ty_post" catalog="robot"
+		class="com.isd.entity.tianya.TyPost">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+		<column name="ctime" type="java.util.Date"></column>
+		<column name="utime" type="java.util.Date"></column>
+	</table>
+	<table name="ty_topic" catalog="robot"
+		class="com.isd.entity.tianya.TyTopic">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+		<column name="rtime" type="java.util.Date"></column>
+		<column name="ctime" type="java.util.Date"></column>
+		<column name="utime" type="java.util.Date"></column>
+	</table>
+	<table name="ty_user" catalog="robot"
+		class="com.isd.entity.tianya.TyUser">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+		<column name="ltime" type="java.util.Date"></column>
+		<column name="rtime" type="java.util.Date"></column>
+		<column name="ctime" type="java.util.Date"></column>
+		<column name="utime" type="java.util.Date"></column>
+	</table>
+	<table name="wx_content" catalog="robot"
+		class="com.isd.entity.wechat.WxContent">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+		<column name="ptime" type="java.util.Date"></column>
+		<column name="ftime" type="java.util.Date"></column>
+	</table>
+	<table name="wx_column" catalog="mining"
+		class="com.isd.entity.wechat.WxColumn">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+		<column name="ctime" type="java.util.Date"></column>
+		<column name="utime" type="java.util.Date"></column>
+		<column name="stime" type="java.util.Date"></column>
+		<column name="ftime" type="java.util.Date"></column>
+	</table>
+	<table name="wx_result" catalog="robot"
+		class="com.isd.entity.wechat.WxResult">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+		<column name="ptime" type="java.util.Date"></column>
+		<column name="ctime" type="java.util.Date"></column>
+	</table>
+	<table name="wx_weixin" catalog="robot"
+		class="com.isd.entity.wechat.WxWeixin">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+		<column name="ctime" type="java.util.Date"></column>
+		<column name="utime" type="java.util.Date"></column>
+		<column name="msgtime" type="java.util.Date"></column>
+	</table>
+	<table name="xw_page" catalog="robot"
+		class="com.isd.entity.news.XwPage">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+		<column name="ptime" type="java.util.Date"></column>
+		<column name="ftime" type="java.util.Date"></column>
+		<column name="ctime" type="java.util.Date"></column>
+	</table>
+	<table name="xw_column" catalog="mining"
+		class="com.isd.entity.news.XwColumn">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+		<column name="ctime" type="java.util.Date"></column>
+		<column name="utime" type="java.util.Date"></column>
+		<column name="stime" type="java.util.Date"></column>
+		<column name="ftime" type="java.util.Date"></column>
+	</table>
+	<table name="xw_site" catalog="robot"
+		class="com.isd.entity.news.XwSite">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+		<column name="ctime" type="java.util.Date"></column>
+		<column name="utime" type="java.util.Date"></column>
+	</table>
+	<table name="xw_pattern" catalog="robot"
+		class="com.isd.entity.news.XwPattern">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+		<column name="ctime" type="java.util.Date"></column>
+	</table>
+	<table name="zmt_content" catalog="mining"
+		class="com.isd.entity.mark.ZmtContent">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+		<column name="ctime" type="java.util.Date"></column>
+		<column name="utime" type="java.util.Date"></column>
+	</table>
+	<table name="zmt_tag" catalog="mining"
+		class="com.isd.entity.mark.ZmtTag">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+		<column name="ctime" type="java.util.Date"></column>
+	</table>
+	<table name="zmt_contenttag" catalog="mining"
+		class="com.isd.entity.mark.ZmtContenttag">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+		<column name="ctime" type="java.util.Date"></column>
+	</table>
+	<table name="api_interface" catalog="mining"
+		class="com.isd.entity.api.ApiInterface">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+		<column name="ctime" type="java.util.Date"></column>
+		<column name="utime" type="java.util.Date"></column>
+		<column name="expire" type="java.util.Date"></column>
+	</table>
+	<table name="ty_relation" catalog="robot"
+		class="com.isd.entity.tianya.TyRelation">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+	</table>
+	<table name="bdp_admin" catalog="mining"
+		class="com.isd.entity.manage.AdminUser">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+		<column name="ctime" type="java.util.Date"></column>
+		<column name="utime" type="java.util.Date"></column>
+	</table>
+	<table name="bdp_message" catalog="mining"
+		class="com.isd.entity.manage.Message">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+		<column name="ctime" type="java.util.Date"></column>
+		<column name="utime" type="java.util.Date"></column>
+	</table>
+	<table name="bdp_payment" catalog="mining"
+		class="com.isd.entity.mining.Payment">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+		<column name="ctime" type="java.util.Date"></column>
+		<column name="utime" type="java.util.Date"></column>
+		<column name="effect" type="java.util.Date"></column>
+	</table>
+	<table name="bdp_problem" catalog="mining"
+		class="com.isd.entity.mining.Problem">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+		<column name="ctime" type="java.util.Date"></column>
+		<column name="utime" type="java.util.Date"></column>
+	</table>
+	<table name="lt_page" catalog="robot"
+		class="com.isd.entity.bbs.LtPage">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+		<column name="ptime" type="java.util.Date"></column>
+		<column name="ctime" type="java.util.Date"></column>
+	</table>
+	<table name="lt_site" catalog="robot"
+		class="com.isd.entity.bbs.LtSite">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+		<column name="ctime" type="java.util.Date"></column>
+	</table>
+	<table name="lt_column" catalog="mining"
+		class="com.isd.entity.bbs.LtColumn">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+		<column name="ctime" type="java.util.Date"></column>
+		<column name="utime" type="java.util.Date"></column>
+		<column name="stime" type="java.util.Date"></column>
+		<column name="ftime" type="java.util.Date"></column>
+	</table>
+	<table name="lt_result" catalog="robot"
+		class="com.isd.entity.bbs.LtResult">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+		<column name="ptime" type="java.util.Date"></column>
+		<column name="ctime" type="java.util.Date"></column>
+	</table>
+	<table name="sj_column" catalog="mining"
+		class="com.isd.entity.event.SjColumn">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+		<column name="ctime" type="java.util.Date"></column>
+		<column name="utime" type="java.util.Date"></column>
+		<column name="ftime" type="java.util.Date"></column>
+		<column name="stime" type="java.util.Date"></column>
+	</table>
+	<table name="sj_result" catalog="mining"
+		class="com.isd.entity.event.SjResult">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+		<column name="ptime" type="java.util.Date"></column>
+		<column name="ctime" type="java.util.Date"></column>
+	</table>
+	<table name="fm_column" catalog="mining"
+		class="com.isd.entity.negative.FmColumn">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+		<column name="ctime" type="java.util.Date"></column>
+		<column name="utime" type="java.util.Date"></column>
+		<column name="stime" type="java.util.Date"></column>
+		<column name="ftime" type="java.util.Date"></column>
+	</table>
+	<table name="bdp_mobloc" catalog="mining"
+		class="com.isd.entity.mining.Mobloc">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+		<column name="ctime" type="java.util.Date"></column>
+	</table>
+	<table name="xw_result" catalog="robot"
+		class="com.isd.entity.news.XwResult">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+		<column name="ftime" type="java.util.Date"></column>
+		<column name="ctime" type="java.util.Date"></column>
+		<column name="ptime" type="java.util.Date"></column>
+	</table>
+	<table name="wx_relation" catalog="mining"
+		class="com.isd.entity.wechat.WxRelation">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+		<column name="ctime" type="java.util.Date"></column>
+	</table>
+	<table name="wb_middle" catalog="robot"
+		class="com.isd.entity.weibo.WbMiddle">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+		<column name="ptime" type="java.util.Date"></column>
+		<column name="ctime" type="java.util.Date"></column>
+	</table>
+	<table name="bdp_partner" catalog="mining"
+		class="com.isd.entity.mining.Partner">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+		<column name="utime" type="java.util.Date"></column>
+		<column name="ctime" type="java.util.Date"></column>
+	</table>
+	<table name="wb_dict" catalog="robot"
+		class="com.isd.entity.weibo.WbDict">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+	</table>
+	<table name="wb_relation" catalog="robot"
+		class="com.isd.entity.weibo.WbRelation">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+	</table>
+	<table name="bdp_province" catalog="robot"
+		class="com.isd.entity.common.Province">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+	</table>
+	<table name="bdp_city" catalog="robot"
+		class="com.isd.entity.common.City">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+	</table>
+	<table name="bdp_category" catalog="mining"
+		class="com.isd.entity.common.Category">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+	</table>
+	<table name="bdp_industry" catalog="robot"
+		class="com.isd.entity.common.Industry">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+	</table>
+	<table name="bdp_daystat" catalog="mining"
+		class="com.isd.entity.mining.Daystat">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+		<column name="utime" type="java.util.Date"></column>
+	</table>
+	<table name="bdp_geostat" catalog="mining"
+		class="com.isd.entity.mining.Geostat">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+		<column name="utime" type="java.util.Date"></column>
+	</table>
+	<table name="xw_blacklist" catalog="robot"
+		class="com.isd.entity.news.XwBlacklist">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+		<column name="ctime" type="java.util.Date"></column>
+	</table>
+	<table name="bdp_category" catalog="robot"
+		class="com.isd.entity.common.Category">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+		<column name="ctime" type="java.util.Date"></column>
+		<column name="utime" type="java.util.Date"></column>
+	</table>
+	<table name="wb_result" catalog="robot"
+		class="com.isd.entity.weibo.WbResult">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+		<column name="ptime" type="java.util.Date"></column>
+		<column name="ctime" type="java.util.Date"></column>
+	</table>
+</hibernate-reverse-engineering>
